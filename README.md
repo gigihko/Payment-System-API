@@ -1,112 +1,113 @@
-####FastAPI Payment System API
+# FastAPI Payment System API
+
 This is a REST API built using FastAPI for a payment system, which includes features such as registration, login, top-up, payment, transfer, transactions report, and profile update.
 
-Features
+## Features
 User Registration: Register a new user.
 User Login: Authenticate an existing user and issue access tokens.
 Top-up: Add funds to a user's account.
-Installation
-Requirements
-Python 3.10 or higher
-PostgreSQL
+
+## Installation
+
+### Requirements
+- Python 3.10 or higher
+- PostgreSQL
+
 Steps
 Clone the repository:
-
-bash
-Copy code
-git clone https://github.com/your-repository-link
+```bash
+git clone https://github.com/gigihko/Payment-System-API/
 cd your-project-folder
-Create a virtual environment:
+```
 
-bash
-Copy code
+Create a virtual environment:
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
 Install the dependencies:
-
-bash
-Copy code
+```bash
 pip install -r requirements.txt
+```
+
 Set up PostgreSQL:
+Ensure that PostgreSQL is installed and running on your system. You should also create a database for this project.
+Example:
 
-Ensure that PostgreSQL is installed and running on your system. You should also create a database for this project. Example:
-
-sql
-Copy code
+```bash
 CREATE DATABASE payment_system;
+```
 Create a .env file and add the following configurations:
 
-bash
-Copy code
+```bash
 DATABASE_URL=postgresql://<username>:<password>@localhost:5432/<your-database-name>
 SECRET_KEY=<your-secret-key>
-Run Alembic migrations to set up the database:
+```
 
-bash
-Copy code
-alembic upgrade head
-Run the Application
+## Run the Application
 To start the FastAPI server:
-
-bash
-Copy code
+```bash
 uvicorn app.main:app --reload
+```
 The application will be running at http://127.0.0.1:8000.
 
-API Endpoints
-1. User Registration
-URL: /register
-Method: POST
-Request Body:
-json
-Copy code
+## API Endpoints
+### 1. User Registration
+- URL: /register
+- Method: POST
+- Request Body:
+```json
 {
   "username": "example",
   "password": "example123",
   "email": "user@example.com"
 }
+```
 Response:
-json
-Copy code
+```json
 {
   "message": "User registered successfully."
 }
-2. User Login
-URL: /login
-Method: POST
-Request Body:
-json
-Copy code
+```
+
+### 2. User Login
+- URL: /login
+- Method: POST
+- Request Body:
+```json
 {
   "username": "example",
   "password": "example123"
 }
+```
 Response:
-json
-Copy code
+```json
 {
   "access_token": "token",
   "token_type": "bearer"
 }
-3. Top-up
-URL: /topup
-Method: POST
-Request Body:
-json
-Copy code
+```
+
+### 3. Top Up
+- URL: /topup
+- Method: POST
+- Request Body:
+```json
 {
   "amount": 100000
 }
+```
 Response:
-json
-Copy code
+```json
 {
   "message": "Top-up successful.",
   "balance": 100000
 }
-Directory Structure
-bash
-Copy code
+```
+
+### Directory Structure
+```bash
 project-root
 │
 ├── app/
@@ -121,3 +122,16 @@ project-root
 ├── .env                 # Environment variables
 ├── requirements.txt     # List of dependencies
 └── README.md            # Project documentation
+```
+
+
+
+## Purpose
+
+For Coding Test - Back End Developer Position
+
+
+
+## connect with me
+
+[Linkedin](https://www.linkedin.com/in/gigihko/)
